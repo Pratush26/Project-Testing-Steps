@@ -1,4 +1,4 @@
-# This is a quick proto-type testing example of testing a production grade website
+# This is a quick proto-type testing example of testing a production grade web application
 
 1. Check images are used, properly related or not.
 
@@ -10,7 +10,12 @@
 1. Ensure all basic info are properly updated (logo, email, phone, email, address, social links)
 1. Ensure all contents are relavent
 1. Properly optimized the images
+1. Make the overall interactivitly user friendly
+1. Properly varify actions with authentication and authorization
+1. Ensure proper calculations
+1. Properly restrict api calls
 1. Test all form submission
-1. Add proper not found and error page
+1. Ensure quick changes in the ui whlie any update
 1. Ensure relavent toaster and alert messages
+1. Add proper not found and error page
 1. Improve the lighthouse test result
