@@ -8,6 +8,7 @@
 1. Maintain proper space consistancy between sections
 1. Check meta tag's info, canonical URL
 1. Ensure all basic info are properly updated (logo, FavIcone, email, phone, email, address, social links)
+1. Check proper GTM tags and Contact forms
 1. Ensure all contents are relavent
 1. Properly optimized the images
 1. Make the overall interactivitly user friendly
@@ -22,3 +23,4 @@
 1. Improve the lighthouse test result
 1. Ensure proper safety of env to avoid leak or other vulnerability
 1. Check build and type errors
+1. Remove Unnecessary console logs
