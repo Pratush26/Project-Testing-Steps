@@ -19,7 +19,7 @@
 1. Ensure quick changes in the ui whlie any update
 1. Ensure relavent toaster and alert messages
 1. Add sitemap.xml, robots.txt
-1. Add proper not found and error page
+1. Add proper privacy policy, terms & conditions, not found and error page
 1. Improve the lighthouse test result
 1. Ensure proper safety of env to avoid leak or other vulnerability
 1. Check build and type errors
