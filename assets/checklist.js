@@ -7,25 +7,6 @@
       .replace(/"/g, "&quot;");
   }
 
-  function parseMarkdown(md) {
-    const lines = md.split(/\r?\n/);
-    let title = "";
-    const items = [];
-    for (const raw of lines) {
-      const line = raw.trimEnd();
-      const titleMatch = line.match(/^#\s+(.*)$/);
-      if (titleMatch && !title) {
-        title = titleMatch[1].trim();
-        continue;
-      }
-      const itemMatch = line.match(/^\d+\.\s+(.+)$/);
-      if (itemMatch) {
-        items.push(itemMatch[1].trim());
-      }
-    }
-    return { title, items };
-  }
-
   function updateProgress(state) {
     const checked = state.listEl.querySelectorAll('[data-checked="true"]').length;
     const total = state.items.length;
@@ -70,43 +51,39 @@
     updateProgress(state);
   }
 
-  async function init(opts) {
+  function init(opts) {
     const listEl = document.querySelector(opts.list);
     if (!listEl) return;
+
+    const data = (window.CHECKLISTS || []).find((c) => c.id === opts.key);
+    if (!data) {
+      listEl.innerHTML =
+        '<p class="text-sm text-red-600 dark:text-red-400">Checklist "' +
+        escapeHtml(opts.key || "") +
+        '" was not found in assets/constants.js.</p>';
+      return;
+    }
+
     const state = {
       listEl,
-      items: [],
+      items: data.items || [],
       titleEl: opts.title ? document.querySelector(opts.title) : null,
+      subtitleEl: opts.subtitle ? document.querySelector(opts.subtitle) : null,
       progressEl: opts.progress ? document.querySelector(opts.progress) : null,
       barEl: opts.bar ? document.querySelector(opts.bar) : null,
     };
+
+    if (state.titleEl) {
+      state.titleEl.textContent = data.title;
+      document.title = data.title;
+    }
+    if (state.subtitleEl) state.subtitleEl.textContent = data.description;
 
     if (opts.reset) {
       const resetBtn = document.querySelector(opts.reset);
       if (resetBtn) resetBtn.addEventListener("click", () => reset(state));
     }
 
-    let md;
-    try {
-      const res = await fetch(opts.readme, { cache: "no-store" });
-      if (!res.ok) throw new Error("HTTP " + res.status);
-      md = await res.text();
-    } catch (err) {
-      if (opts.fallback) {
-        md = opts.fallback;
-      } else {
-        listEl.innerHTML =
-          '<p class="text-sm text-red-600 dark:text-red-400">Could not load the checklist. Run this from a web server (or open via GitHub Pages) so the README can be fetched.</p>';
-        return;
-      }
-    }
-
-    const parsed = parseMarkdown(md);
-    if (state.titleEl && parsed.title) {
-      state.titleEl.textContent = parsed.title;
-      document.title = parsed.title;
-    }
-    state.items = parsed.items;
     render(state);
   }
 

@@ -7,6 +7,7 @@
     <meta name="description" content="Interactive checklist for testing a production-grade web application." />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/theme.js"></script>
+    <script src="assets/constants.js"></script>
     <script src="assets/checklist.js"></script>
   </head>
   <body
@@ -36,7 +37,7 @@
       <h1 id="checklist-title" class="mb-2 text-2xl font-bold tracking-tight sm:text-3xl">
         Web Application Testing Checklist
       </h1>
-      <p class="mb-6 text-slate-600 dark:text-slate-300">
+      <p id="checklist-subtitle" class="mb-6 text-slate-600 dark:text-slate-300">
         Tap an item to mark it done. Progress is shown below and resets when you
         reload the page. This list extends the website checklist with
         application-specific checks.
@@ -61,40 +62,13 @@
       <div id="checklist" class="flex flex-col gap-2"></div>
     </main>
 
-    <script type="text/markdown" id="fallback-md">
-# This is a quick proto-type testing example of testing a production grade web application
 
-1. Check images are used, properly related or not.
-
-1. Check all links are working and redirecting the desired url
-1. Maintain proper color consistancy by following color theme
-1. Ensure responsiveness for all devices
-1. Maintain proper space consistancy between sections
-1. Check meta tag's info, canonical URL
-1. Ensure all basic info are properly updated (logo, FavIcone, email, phone, email, address, social links)
-1. Check proper GTM tags and Contact forms
-1. Ensure all contents are relavent
-1. Properly optimized the images
-1. Make the overall interactivitly user friendly
-1. Properly varify actions with authentication and authorization
-1. Ensure proper calculations
-1. Properly restrict api calls
-1. Test all form submission
-1. Ensure quick changes in the ui whlie any update
-1. Ensure relavent toaster and alert messages
-1. Add sitemap.xml, robots.txt
-1. Add proper privacy policy, terms & conditions, not found and error page
-1. Improve the lighthouse test result
-1. Ensure proper safety of env to avoid leak or other vulnerability
-1. Check build and type errors
-1. Remove Unnecessary console logs
-    </script>
 
     <script>
       ProjectChecklist.init({
-        readme: "web-application-testing/README.md",
-        fallback: document.getElementById("fallback-md").textContent,
+        key: "webapp",
         title: "#checklist-title",
+        subtitle: "#checklist-subtitle",
         list: "#checklist",
         progress: "#progress-text",
         bar: "#progress-bar",
