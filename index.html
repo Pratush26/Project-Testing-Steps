@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Testing Steps</title>
+    <meta
+      name="description"
+      content="Manual testing checklists for production-grade websites and web applications."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/theme.js"></script>
+  </head>
+  <body
+    class="min-h-screen bg-slate-50 text-slate-900 antialiased dark:bg-slate-900 dark:text-slate-100"
+  >
+    <header
+      class="sticky top-0 z-10 border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-700 dark:bg-slate-900/80"
+    >
+      <div
+        class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3"
+      >
+        <a href="index.html" class="flex items-center gap-2 font-semibold">
+          <span
+            class="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-white dark:bg-white dark:text-slate-900"
+            >⛁</span
+          >
+          <span>Project Testing Steps</span>
+        </a>
+        <nav class="flex items-center gap-2">
+          <a
+            href="website-testing.html"
+            class="hidden rounded-md px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 sm:inline-block"
+            >Website</a
+          >
+          <a
+            href="web-application-testing.html"
+            class="hidden rounded-md px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 sm:inline-block"
+            >Web App</a
+          >
+          <button
+            data-theme-toggle
+            type="button"
+            class="flex items-center gap-1.5 rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+          >
+            <span data-theme-icon>🌙</span><span data-theme-label>Dark</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-4 py-12">
+      <section class="mb-12">
+        <p
+          class="mb-2 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400"
+        >
+          Documentation-only repository
+        </p>
+        <h1 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          Manual Testing Checklists
+        </h1>
+        <p class="max-w-2xl text-slate-600 dark:text-slate-300">
+          A collection of production-grade checklists for verifying websites and
+          web applications before launch. Pick a checklist below to track your
+          progress interactively — check off each item as you test.
+        </p>
+      </section>
+
+      <section class="grid gap-6 sm:grid-cols-2">
+        <a
+          href="website-testing.html"
+          class="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md dark:border-slate-700 dark:bg-slate-800 dark:hover:border-slate-600"
+        >
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-sky-100 text-2xl dark:bg-sky-900/40">
+            🌐
+          </div>
+          <h2 class="mb-1 text-lg font-semibold">Website Testing</h2>
+          <p class="mb-4 text-sm text-slate-600 dark:text-slate-300">
+            Checklist for testing a production-grade website: links, content,
+            SEO basics, forms, and performance.
+          </p>
+          <span
+            class="inline-flex items-center gap-1 text-sm font-medium text-sky-600 dark:text-sky-400"
+            >Open checklist →</span
+          >
+        </a>
+
+        <a
+          href="web-application-testing.html"
+          class="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md dark:border-slate-700 dark:bg-slate-800 dark:hover:border-slate-600"
+        >
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-emerald-100 text-2xl dark:bg-emerald-900/40">
+            🧩
+          </div>
+          <h2 class="mb-1 text-lg font-semibold">Web Application Testing</h2>
+          <p class="mb-4 text-sm text-slate-600 dark:text-slate-300">
+            Superset for web applications: adds authentication, calculations,
+            API restrictions, and UI interactivity checks.
+          </p>
+          <span
+            class="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 dark:text-emerald-400"
+            >Open checklist →</span
+          >
+        </a>
+      </section>
+    </main>
+
+    <footer
+      class="border-t border-slate-200 dark:border-slate-700"
+    >
+      <div
+        class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-4 py-6 text-sm text-slate-500 sm:flex-row dark:text-slate-400"
+      >
+        <span>Project Testing Steps — manual QA checklists.</span>
+        <a
+          href="https://github.com"
+          class="inline-flex items-center gap-1.5 hover:text-slate-700 dark:hover:text-slate-200"
+          ><span>★</span> View on GitHub</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>
